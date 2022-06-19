@@ -1,0 +1,72 @@
+package controller;
+
+import java.util.Scanner;
+
+public class Jankenpon {
+
+	public static void main(String[] args) {
+
+		int jogador, computador;
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("---| PEDRA-PAPEL-TESOURA-LAGARTO-SPOCK |---\n");
+		System.out.println("1- Pedra");
+		System.out.println("2- Papel");
+		System.out.println("3- Tesoura");
+		System.out.println("4- Lagarto");
+		System.out.println("5- Spock");
+		System.out.println("\nQual você irá jogar?");
+
+		jogador = teclado.nextInt();
+		switch (jogador) {
+		case 1:
+			System.out.println("Jogador jogou Pedra!\n");
+			break;
+		case 2:
+			System.out.println("Jogador jogou Papel!\n");
+			break;
+		case 3:
+			System.out.println("Jogador jogou Tesoura!\n");
+			break;
+		case 4:
+			System.out.println("Jogador jogou Lagarto!\n");
+			break;
+		case 5:
+			System.out.println("Jogador jogou Spock!\n");
+			break;
+		}
+		computador = (int) (Math.random() * 5 + 1);
+		teclado.close();
+		switch (computador) {
+		case 1:
+			System.out.println("Computador jogou Pedra!\n");
+			break;
+		case 2:
+			System.out.println("Computador jogou Papel!\n");
+			break;
+		case 3:
+			System.out.println("Computador jogou Tesoura!\n");
+			break;
+		case 4:
+			System.out.println("Computador jogou Lagarto!\n");
+			break;
+		case 5:
+			System.out.println("Computador jogou Spock!\n");
+			break;
+		}
+		if (jogador == computador) {
+			System.out.println("EMPATE!");
+		} else {
+			if ((jogador == 1 && computador == 3) || (jogador == 1 && computador == 4)
+					|| (jogador == 2 && computador == 1) || (jogador == 2 && computador == 5)
+					|| (jogador == 3 && computador == 2) || (jogador == 3 && computador == 4)
+					|| (jogador == 4 && computador == 5) || (jogador == 4 && computador == 2)
+					|| (jogador == 5 && computador == 3) || (jogador == 5 && computador == 1)) {
+
+				System.out.println("JOGADOR VENCEU! PARABÉNS!");
+			} else {
+				System.out.println("COMPUTADOR VENCEU! MAIS SORTE NA PRÓXIMA VEZ..");
+			}
+
+		}
+	}
+}
